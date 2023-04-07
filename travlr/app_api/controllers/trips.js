@@ -50,7 +50,7 @@ const tripFindCode = async (req, res) => {
 const tripsAddTrip = async (req, res) => {
     Model
     .create({
-        code: req.boody.code,
+        code: req.body.code,
         name: req.body.name,
         length: req.body.length,
         start: req.body.start,

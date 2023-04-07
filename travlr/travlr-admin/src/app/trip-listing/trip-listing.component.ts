@@ -17,6 +17,7 @@ export class TripListingComponent implements OnInit {
   constructor(private tripDataService: TripDataService, private router: Router) {}
 
   private addTrip(): void {
+    console.log('Inside TripListingComponent#addTrip');
     this.router.navigate(['add-trip']);
   }
 

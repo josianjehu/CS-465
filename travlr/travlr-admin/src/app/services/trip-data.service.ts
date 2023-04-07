@@ -25,7 +25,7 @@ export class TripDataService {
   public addTrip (formData: Trip): Promise<Trip> {
     console.log('Inside TripDataService#addTrip');
     return this.http
-      .post(`${this.apiBaseUrl}trips`, formData)
+      .post(this.tripUrl, formData)
       .toPromise()
       .then(response => response.json() as Trip[])
       .catch(this.handleError);
@@ -40,13 +40,13 @@ export class TripDataService {
     .catch(this.handleError);
    }
    public updateTrip(formData: Trip): Promise<Trip> {
- console.log('Inside TripDataService#upateTrip');
- console.log(formData);
- return this.http
- .put(this.tripUrl + formData.code, formData)
- .toPromise()
- .then(response => response.json() as Trip[])
- .catch(this.handleError);
+    console.log('Inside TripDataService#upateTrip');
+    console.log(formData);
+    return this.http
+      .put(this.tripUrl + formData.code, formData)
+      .toPromise()
+      .then(response => response.json() as Trip[])
+      .catch(this.handleError);
 }
 
   private handleError(error: any): Promise<any> {

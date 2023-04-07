@@ -40,6 +40,7 @@ export class EditTripComponent implements OnInit {
     description: ['', Validators.required],
   })
   console.log('EditTripComponent#onInit calling TripDataService#getTrip(\'' + tripCode + '\')');
+  
   this.tripService.getTrip(tripCode)
     .then(data => {
       console.log(data);
